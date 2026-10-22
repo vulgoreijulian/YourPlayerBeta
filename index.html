@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090d16"><title>YourPlayer — Crie sua carta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="ambient ambient-one">
+    </div>
+    <div class="ambient ambient-two">
+    </div>
+    <header class="topbar"><a class="brand" href="#"><span class="brand-mark">Y</span><span>Your<span class="neon">Player</span></span></a>
+      <div class="top-meta"><span class="live-dot"></span> PLAYER CARD STUDIO <span class="version">FC 26 INSPIRED</span>
+      </div>
+    </header>
+    <main class="app-shell">
+      <section class="preview-panel">
+        <div class="section-kicker"><span>01</span> VISUALIZAÇÃO
+        </div>
+        <div class="preview-heading">
+          <div>
+            <h1>Sua carta.<br><em>Sua lenda.</em>
+            </h1>
+            <p>Monte um jogador do seu jeito.
+            </p>
+          </div><span class="preview-chip">LIVE PREVIEW <i></i></span>
+        </div>
+        <div class="card-stage">
+          <div class="card-glow">
+          </div>
+          <article class="player-card" id="playerCard" aria-label="Prévia da carta do jogador">
+            <div class="card-top-line">
+            </div>
+            <div class="card-texture">
+            </div>
+            <div class="card-head">
+              <div class="rating-block"><strong id="ovr">86</strong><span id="cardPosition">ST</span>
+                <div class="mini-rule">
+                </div><span class="card-flag" id="cardFlag">🇧🇷</span>
+              </div>
+              <div class="card-logos">
+                <div class="crest" id="cardCrest">YP
+                </div>
+                <div class="league-mark" id="cardLeagueMark">BR
+                </div>
+              </div>
+            </div>
+            <div class="player-photo-wrap">
+              <div class="photo-placeholder" id="photoPlaceholder">
+                <span class="silhouette">✦</span>
+                <span>SUA FOTO AQUI</span>
+              </div><img id="playerPhoto" alt="Foto do jogador" hidden>
+            </div>
+            <div class="card-name" id="cardName">SEU JOGADOR
+            </div>
+            <div class="card-divider">
+            </div>
+            <div class="card-stats" id="cardStats">
+              <div class="stat"><b id="cPAC">89</b><span>RIT</span>
+              </div>
+              <div class="stat"><b id="cSHO">84</b><span>FIN</span>
+              </div>
+              <div class="stat"><b id="cPAS">78</b><span>PAS</span>
+              </div>
+              <div class="stat"><b id="cDRI">86</b><span>CON</span>
+              </div>
+              <div class="stat"><b id="cDEF">42</b><span>DEF</span>
+              </div>
+              <div class="stat"><b id="cPHY">81</b><span>FÍS</span>
+              </div>
+            </div>
+            <div class="card-footer"><span>YOURPLAYER</span><span class="star">✦ ✦ ✦</span><span>FC 26</span>
+            </div>
+          </article>
+        </div>
+        <div class="preview-bottom">
+          <div>
+            <span class="tiny-label">CLASSIFICAÇÃO GERAL</span>
+            <strong><span id="smallOVR">86</span><small> OVR</small></strong>
+          </div>
+          <div class="preview-bottom-right">
+            <span class="tiny-label">STATUS DO CARD</span>
+            <span class="status-ok"><i></i> Atualizado em tempo real</span>
+          </div>
+        </div>
+        <button class="export-button" id="downloadBtn">
+          <span>↓</span> BAIXAR CARTA EM PNG <span class="button-arrow">↗</span>
+        </button>
+        <p class="fine-print">Prévia inspirada no estilo Ultimate Team. YourPlayer não é afiliado à EA SPORTS.
+        </p>
+      </section>
+      <section class="editor-panel">
+        <div class="editor-header">
+          <div>
+            <div class="section-kicker"><span>02</span> PERSONALIZAÇÃO
+            </div>
+            <h2>Player <span class="neon">Builder</span>
+            </h2>
+            <p>Os detalhes fazem a diferença.
+            </p>
+          </div>
+          <div class="header-actions">
+            <button
+              class="random-everything"
+              id="randomEverythingBtn"
+              title="Sortear nacionalidade, liga, time, posição e atributos"
+            >⤨ <span>Surpreenda-me</span>
+            </button>
+            <button class="reset-button" id="resetBtn" title="Restaurar valores iniciais">↺ <span>Resetar</span>
+            </button>
+          </div>
+        </div>
+        <div class="editor-scroll">
+          <section class="form-section">
+            <div class="form-section-title"><span class="section-icon">✎</span>
+              <div>
+                <h3>Identidade do jogador
+                </h3>
+                <p>Como o mundo vai conhecer você.
+                </p>
+              </div>
+            </div>
+            <label class="field-label" for="nameInput">NOME DO JOGADOR
+            </label>
+            <input
+              id="nameInput"
+              class="text-input"
+              maxlength="22"
+              value="Seu Jogador"
+              placeholder="Ex.: Gabriel Silva"
+            >
+            <label class="field-label photo-label" for="photoInput">FOTO DO JOGADOR <span>JPG, PNG ou WEBP</span>
+            </label>
+            <label class="upload-box" for="photoInput">
+              <span class="upload-icon">↑</span>
+              <span>
+                <b>Escolher imagem</b>
+                <small>Selecione um arquivo do seu computador</small>
+              </span>
+              <span class="upload-action">PROCURAR</span>
+              <input id="photoInput" type="file" accept="image/*" hidden>
+
+            </label>
+          </section>
+          <section class="form-section">
+            <div class="form-section-title"><span class="section-icon">◎</span>
+              <div>
+                <h3>Clube & nacionalidade
+                </h3>
+                <p>Escolha sua bandeira e suas cores.
+                </p>
+              </div>
+            </div>
+            <div class="field-grid">
+              <div class="field">
+                <label class="field-label" for="nationInput">NACIONALIDADE
+                </label>
+                <div class="input-with-action">
+                  <span class="selected-symbol" id="nationFlag">🇧🇷</span>
+                  <input
+                    id="nationInput"
+                    class="text-input symbol-input"
+                    list="nationOptions"
+                    value="Brasil"
+                    autocomplete="off"
+                    placeholder="Pesquisar seleção"
+                  >
+                  <datalist id="nationOptions">
+                  </datalist>
+                  <button class="random-btn" data-random="nation" title="Nacionalidade aleatória">⤨
+                  </button>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field-label" for="leagueInput">LIGA
+                </label>
+                <div class="input-with-action">
+                  <span class="selected-symbol league-symbol" id="leagueSymbol">BR</span>
+                  <input
+                    id="leagueInput"
+                    class="text-input symbol-input"
+                    list="leagueOptions"
+                    value="Série A Brasileirão"
+                    autocomplete="off"
+                    placeholder="Pesquisar liga"
+                  >
+                  <datalist id="leagueOptions">
+                  </datalist>
+                  <button class="random-btn" data-random="league" title="Liga aleatória">⤨
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field-label" for="teamInput">TIME / CLUBE
+              </label>
+              <div class="input-with-action">
+                <span class="selected-symbol crest-symbol" id="teamSymbol">YP</span>
+                <input
+                  id="teamInput"
+                  class="text-input symbol-input"
+                  list="teamOptions"
+                  value="Palmeiras"
+                  autocomplete="off"
+                  placeholder="Pesquisar time"
+                >
+                <datalist id="teamOptions">
+                </datalist>
+                <button class="random-btn" data-random="team" title="Time aleatório">⤨
+                </button>
+              </div>
+              <p class="helper-text" id="teamHint">Os times disponíveis acompanham a liga selecionada.
+              </p>
+            </div>
+          </section>
+          <section class="form-section">
+            <div class="form-section-title"><span class="section-icon">⌖</span>
+              <div>
+                <h3>Posição em campo
+                </h3>
+                <p>A função que define seu estilo.
+                </p>
+              </div>
+            </div>
+            <label class="field-label" for="positionInput">POSIÇÃO PRINCIPAL
+            </label>
+            <div class="select-wrap">
+              <select id="positionInput" class="text-input">
+                <option>ST
+                </option>
+                <option>CF
+                </option>
+                <option>LW
+                </option>
+                <option>RW
+                </option>
+                <option>LM
+                </option>
+                <option>RM
+                </option>
+                <option>CAM
+                </option>
+                <option>CM
+                </option>
+                <option>CDM
+                </option>
+                <option>LB
+                </option>
+                <option>RB
+                </option>
+                <option>CB
+                </option>
+                <option>LWB
+                </option>
+                <option>RWB
+                </option>
+                <option>GK
+                </option>
+              </select><span>⌄</span>
+            </div>
+          </section>
+          <section class="form-section stats-section">
+            <div class="form-section-title"><span class="section-icon">⌁</span>
+              <div>
+                <h3>Atributos do jogador
+                </h3>
+                <p>Personalize cada atributo de 1 a 99.
+                </p>
+              </div>
+              <button class="random-all" id="randomStatsBtn">⤨ Sortear todos
+              </button>
+            </div>
+            <div class="stats-mode">
+              <span class="mode-dot"></span>
+              <span id="statsModeLabel">JOGADOR DE LINHA</span>
+              <span class="mode-separator">/</span>
+              <span>OVR AUTOMÁTICO</span>
+            </div>
+            <div class="stats-grid" id="statsGrid">
+            </div>
+            <p class="helper-text stats-hint">
+              O OVR é estimado com pesos por posição para simular a lógica geral do FC.
+              O cálculo oficial do jogo é mais complexo.
+
+            </p>
+          </section>
+        </div>
+        <div class="editor-bottom"><span><i></i> ALTERAÇÕES SALVAS NA PRÉVIA</span><span>YOURPLAYER <b>© 2026</b></span>
+        </div>
+      </section>
+    </main>
+    <script src="main.js">
+    </script>
+  </body>
+</html>
